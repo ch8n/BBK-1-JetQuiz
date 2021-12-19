@@ -42,6 +42,11 @@ class QuizActivity : AppCompatActivity() {
         createGame()
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        countDownTimer?.cancel()
+    }
+
     fun getPlayerName(): String {
         return intent.extras?.get("player_name").toString()
     }
@@ -157,17 +162,17 @@ class QuizActivity : AppCompatActivity() {
         val highScore3 = sharedPref.getString("key_score_3_value", "0")?.toDoubleOrNull() ?: 0.0
 
         when {
-            finalScore >= highScore1 -> {
-                sharedPref.edit(commit = true) { putString("key_score_1_value", "$finalScore") }
-                sharedPref.edit(commit = true) { putString("key_score_1_name", getPlayerName()) }
+            finalScore >= highScore1 -> sharedPref.edit(commit = true) {
+                putString("key_score_1_value", "$finalScore")
+                putString("key_score_1_name", getPlayerName())
             }
-            finalScore >= highScore2 -> {
-                sharedPref.edit(commit = true) { putString("key_score_2_value", "$finalScore") }
-                sharedPref.edit(commit = true) { putString("key_score_2_name", getPlayerName()) }
+            finalScore >= highScore2 -> sharedPref.edit(commit = true) {
+                putString("key_score_2_value", "$finalScore")
+                putString("key_score_2_name", getPlayerName())
             }
-            finalScore >= highScore3 -> {
-                sharedPref.edit(commit = true) { putString("key_score_3_value", "$finalScore") }
-                sharedPref.edit(commit = true) { putString("key_score_3_name", getPlayerName()) }
+            finalScore >= highScore3 -> sharedPref.edit(commit = true) {
+                putString("key_score_3_value", "$finalScore")
+                putString("key_score_3_name", getPlayerName())
             }
         }
     }
