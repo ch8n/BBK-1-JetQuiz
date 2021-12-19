@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">JetQuiz</string>
+    <string name="hint_name">Name?</string>
 </resources>

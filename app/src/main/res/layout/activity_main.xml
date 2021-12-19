@@ -4,208 +4,169 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".QuizActivity">
 
-    <ProgressBar
-        android:id="@+id/progress_countdown"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="8dp"
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/label_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:ellipsize="end"
+        android:text="@string/app_name"
+        android:textSize="48sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/img_countdown"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_margin="16dp"
+        android:id="@+id/img_app"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@raw/clock" />
+        app:layout_constraintTop_toBottomOf="@id/label_app"
+        app:srcCompat="@drawable/ic_logo" />
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.40">
-
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/container_a"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_margin="16dp"
-            app:cardCornerRadius="20dp"
-            app:layout_constraintEnd_toStartOf="@id/container_b"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:cardBackgroundColor="@color/teal_700">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/img_status_1"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_gravity="center"
-                android:layout_margin="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:srcCompat="@drawable/right" />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/container_b"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_margin="16dp"
-            app:cardCornerRadius="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/container_a"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:cardBackgroundColor="@color/purple_700">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/img_status_2"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_gravity="center"
-                android:layout_margin="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:srcCompat="@drawable/wrong" />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/container_c"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_margin="16dp"
-            app:cardCornerRadius="20dp"
-            app:layout_constraintEnd_toStartOf="@id/container_d"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/container_a"
-            tools:cardBackgroundColor="@color/purple_700">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/img_status_3"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_gravity="center"
-                android:layout_margin="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:srcCompat="@drawable/wrong" />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/container_d"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_margin="16dp"
-            app:cardCornerRadius="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/container_c"
-            app:layout_constraintTop_toBottomOf="@id/container_b"
-            tools:cardBackgroundColor="@color/teal_700">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/img_status_4"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_gravity="center"
-                android:layout_margin="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:srcCompat="@drawable/wrong" />
-
-
-        </androidx.cardview.widget.CardView>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_color1"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="120dp"
-            android:layout_height="55dp"
-            android:layout_margin="24dp"
-            android:text="Color 1"
-            app:layout_constraintEnd_toStartOf="@+id/btn_color2"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/container_c" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_color2"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="120dp"
-            android:layout_height="55dp"
-            android:layout_margin="24dp"
-            android:text="Color 2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btn_color1"
-            app:layout_constraintTop_toBottomOf="@id/container_d" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_color3"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="120dp"
-            android:layout_height="55dp"
-            android:layout_margin="16dp"
-            android:text="Color 3"
-            app:layout_constraintEnd_toStartOf="@+id/btn_color4"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_color1" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_color4"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="120dp"
-            android:layout_height="55dp"
-            android:layout_margin="16dp"
-            android:text="Color 4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btn_color3"
-            app:layout_constraintTop_toBottomOf="@id/btn_color2" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/img_countdown_status"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_margin="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/countdown_1" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/text_score"
+        android:id="@+id/label_high_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0"
+        android:text="High Score :"
         android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="@id/img_score"
-        app:layout_constraintStart_toEndOf="@id/img_score"
-        app:layout_constraintTop_toTopOf="@id/img_score" />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/img_score"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:layout_margin="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/score" />
+        app:layout_constraintTop_toBottomOf="@id/img_app" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_score_1_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/text_score_1_value"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_high_score"
+        tools:text="Name" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_score_2_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/text_score_2_value"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_score_1_name"
+        tools:text="Name 2" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_score_3_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/text_score_3_value"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_score_2_name"
+        tools:text="Name 3" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_score_1_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@id/text_score_1_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="@id/text_score_1_name"
+        tools:text="123" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_score_2_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@id/text_score_2_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="@id/text_score_2_name"
+        tools:text="123" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_score_3_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@id/text_score_3_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="@id/text_score_3_name"
+        tools:text="123" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/container_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_name"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Your Name?">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_start"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_margin="24dp"
+            android:text="Start Quiz?"
+            android:textAllCaps="false" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
