@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">JetQuiz</string>
     <string name="hint_name">Name?</string>
+    <string name="high_score">High Score :</string>
+    <string name="name">Name</string>
+    <string name="unknown">\???</string>
 </resources>
