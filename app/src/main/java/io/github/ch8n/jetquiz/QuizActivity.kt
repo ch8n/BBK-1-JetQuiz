@@ -11,8 +11,8 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.cardview.widget.CardView
 import androidx.core.content.edit
 import com.bumptech.glide.Glide
-import io.github.ch8n.jetquiz.data.model.Color
-import io.github.ch8n.jetquiz.data.model.colors
+import io.github.ch8n.jetquiz.data.Color
+import io.github.ch8n.jetquiz.data.colors
 import io.github.ch8n.jetquiz.databinding.ActivityQuizBinding
 import kotlin.properties.Delegates
 
@@ -47,7 +47,7 @@ class QuizActivity : AppCompatActivity() {
         countDownTimer?.cancel()
     }
 
-    fun getPlayerName(): String {
+    private fun getPlayerName(): String {
         return intent.extras?.get("player_name").toString()
     }
 
@@ -80,6 +80,7 @@ class QuizActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
+                binding.progressCountdown.progress = 0
                 // trigger when game timer is over
                 binding.imgCountdownStatus.setImageResource(R.drawable.game_over)
                 score = 999.0
@@ -126,12 +127,13 @@ class QuizActivity : AppCompatActivity() {
     }
 
     fun gameOver(finalScore: Double) {
-
         saveScore(finalScore)
-
         score = 0.0
         maxScore = 0.0
+        alertDialog(finalScore)
+    }
 
+    private fun alertDialog(finalScore: Double) {
         var alertDialog: AlertDialog? = null
         val alertDialogSetup = AlertDialog.Builder(this)
         alertDialogSetup.setTitle("Game Over!")
