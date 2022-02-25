@@ -1,5 +1,7 @@
 # Big Brain Kotlin : Application #1 - JetQuiz 
 
+![](./img.png)
+
 ## features
 - Name the colours correctly 
 - Correct guess +1 score and wrong guess - 0.5 score
