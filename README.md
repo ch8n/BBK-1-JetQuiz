@@ -1,4 +1,5 @@
 # Big Brain Kotlin : Application #1 - JetQuiz 
+Sample application build for teaching basics of kotlin for Big-Brain-Kotlin Book
 
 ![](./img.png)
 
