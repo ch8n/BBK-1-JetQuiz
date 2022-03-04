@@ -3,16 +3,46 @@ Sample application build for teaching basics of kotlin for Big-Brain-Kotlin Book
 
 ![](./img.png)
 
-## features
+## Features
 - Name the colours correctly 
-- Correct guess +1 score and wrong guess - 0.5 score
+    - Correct guess +1 score and wrong guess - 0.5 score
 - When Score Reaches Zero Game Over
 - Game Randomizes Each level 
 - Leaderboard With Max Score
 
-## Specs
-- Grid of 4 Colours
-- Grid for 4 Names
+## Android Apis Used :
+- Constraint Layout
+- Card Views
+- Glide Image loading library - gifs & images
+- Jetpack View-binding
+- Activity
+- Intents
+- Shared Preferences
+- Android Lifecycle - create, resume, destroy
+- Android assets - images
+- Count Down timer API
+- Alert Dialog API
+- UI Components :
+    - Buttons + Click Listeners
+    - Images
+    - Text
+    - Edit Fields
+
+## Kotlin Apis Used :
+- Language Primitives :
+    - val/var & lateinit variable
+    - generic functions
+    - nullable fields & handling
+    - object class
+    - if/else, when
+    - generic Classes + Inheritance
+- Data Class
+- Delegates - lazy
+- Collections API & functions
+    - List -> shuffle, take, forEach , forEachIndexed
+
+## Programming Pattern used :
+- Observer Pattern
 
 ## :cop: License
 Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
